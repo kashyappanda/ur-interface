@@ -1,7 +1,8 @@
 import URBasic
 import time
 
-host = '10.241.34.47'   #Please adjust to match your IP
+robot_host = '10.241.34.47'   #Please adjust to match your IP
+linear_slide_host = '10.241.34.48'
 
 def RobotHome():
     '''
@@ -10,7 +11,7 @@ def RobotHome():
     https://www.universal-robots.com/download/?option=26266#section16597
     '''
     robotModel = URBasic.robotModel.RobotModel()
-    robot = URBasic.urScriptExt.UrScriptExt(host=host,robotModel=robotModel)
+    robot = URBasic.urScriptExt.UrScriptExt(host=robot_host, robotModel=robotModel)
     robot.reset_error()
    
     robot.movej(q=[4.712398052215576, -1.5709522406207483, 8.392333984375E-5, -1.5709040800677698, -1.557509051721695E-4, -7.18275653284195E-5], a=1.3962634015954636, v=3.141592653589793)
